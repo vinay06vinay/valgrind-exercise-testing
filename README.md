@@ -36,4 +36,4 @@ The above command can also be used once the errors has been corrected and the ou
 ### Extra Credit Answer
 1. Valgrind is a memory checking tool which works on the lower level and can detect memory errors, unintialization errors
 in your program whether the program executable is linked static or dynamic. Static linked executable will just make the libraries inside the executable static but it does not remove any memory errors that will be detected by valgrind.
-2. The key advantage of using Valgrind is its ability to analyze the runtime behavior of your program and identify       memory allocation/ deallocation errors, unintialized errors as mentioned above, regardless of the linking method used. 
+2. In the current scenario, valgrind will detect the two bugs with or without statically linked executable. But, if the executable is static, valgrind will detect many additional memory related errors due to many libraries in the shell-app and cmake build of this project are dynamic and they are evaluated by shell-app during runtime. 
