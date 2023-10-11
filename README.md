@@ -30,4 +30,7 @@ valgrind --leak-check=full --track-origins=yes -s ./app/shell-app
 The above command can also be used once the errors has been corrected and the output is rebuild
 
 
-
+### Extra Credit Answer
+1. Valgrind is a memory checking tool which works on the lower level and can detect memory errors, unintialization errors
+in your program whether the program executable is linked static or dynamic. Static linked executable will just make the libraries inside the executable static but it does not remove any memory errors that will be detected by valgrind.
+2. The key advantage of using Valgrind is its ability to analyze the runtime behavior of your program and identify       memory allocation/ deallocation errors, unintialized errors as mentioned above, regardless of the linking method used. 
