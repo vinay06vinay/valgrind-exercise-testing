@@ -13,9 +13,15 @@ AnalogSensor::~AnalogSensor()
 
 int AnalogSensor::Read()
 {
-    std::vector<int> *readings = new std::vector<int>(mSamples, 10);
-
-    double result = std::accumulate( readings->begin(), readings->end(), 0.0 ) / readings->size();
+    // As the vector is allocated on heap it needs to be deleted to prevent memory leak. So, instead we 
+    // change the vector to stor on stack
+    std::vector<int> readings(mSamples, 10);
+    
+    double sum = 0;
+    for (int n:readings){
+        sum += n;
+    }
+    double result = sum / readings.size();
     return result;
 }
 

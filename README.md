@@ -20,3 +20,14 @@
   rm -rf build/
 ```
 
+## To run the Valgrind after build above
+
+```bash
+# Use below command to check valgrind output for different memory errors and unintialization errors
+valgrind --leak-check=full --track-origins=yes -s ./app/shell-app 
+
+```
+The above command can also be used once the errors has been corrected and the output is rebuild
+
+
+
