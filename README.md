@@ -29,6 +29,9 @@ valgrind --leak-check=full --track-origins=yes -s ./app/shell-app
 ```
 The above command can also be used once the errors has been corrected and the output is rebuild
 
+### Bugs Found:
+1. In the main.cpp, a unintialized variable is present.
+2. In the Analog Sensor.cpp a vector is initialized and then allocated dynamically on heap. This is not required to calculate the sum. So, the vector is initialized back to stack
 
 ### Extra Credit Answer
 1. Valgrind is a memory checking tool which works on the lower level and can detect memory errors, unintialization errors
